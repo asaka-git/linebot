@@ -40,7 +40,7 @@ def handle_message(event):
 def talk_ai(word):
     if word=="ごりら":
         return 'I AM GORILLA'
-    elif word[0]=='':
+    elif word[0]=='Q':
         url = 'https://www.google.co.jp/search'
         response = requests.get(url, params={'q':word})
         return response.text
