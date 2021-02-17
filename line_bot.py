@@ -37,7 +37,7 @@ def handle_message(event):
 
 #返事を返す、もしくは検索する
 def talk_ai(word):
-  if word[0]=='(' and word[len(word)-1]==')':
+  if word==:
     url='https://www.google.co.jp/search'
     response = requests.get(url, params={'q': word})
     return 'HELLO'
