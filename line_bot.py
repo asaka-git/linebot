@@ -3,6 +3,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 import pya3rt
+import requests
 
 app=Flask(__name__)
 
@@ -39,6 +40,13 @@ def handle_message(event):
 def talk_ai(word):
     if word=="ごりら":
         return 'I AM GORILLA'
+    elif word[0]=='':
+        url = 'https://www.google.co.jp/search'
+        response = requests.get(url, params={'q':word})
+        return response.text
+ 
+#検索結果表示
+print(response.text)
     else:
         apikey='DZZgNzc1RdpkDzIvzfq6ZGKJCZ1QH4LL'
         client=pya3rt.TalkClient(apikey)
