@@ -44,9 +44,6 @@ def talk_ai(word):
         url = 'https://www.google.co.jp/search'
         response = requests.get(url, params={'q':word})
         return response.text
- 
-#検索結果表示
-print(response.text)
     else:
         apikey='DZZgNzc1RdpkDzIvzfq6ZGKJCZ1QH4LL'
         client=pya3rt.TalkClient(apikey)
