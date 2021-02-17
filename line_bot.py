@@ -37,15 +37,15 @@ def handle_message(event):
 
 #返事を返す、もしくは検索する
 def talk_ai(word):
-  if word=="ごりら":
-    url='https://www.google.co.jp/search'
-    response = requests.get(url, params={'q': word})
+    if word=="ごりら":
+        url='https://www.google.co.jp/search'
+        response = requests.get(url, params={'q': word})
         return 'HELLO'
-  else:
-    apikey='DZZgNzc1RdpkDzIvzfq6ZGKJCZ1QH4LL'
-    client=pya3rt.TalkClient(apikey)
-    reply_message=client.talk(word)
-      return reply_message['results'][0]['reply']
+    else:
+        apikey='DZZgNzc1RdpkDzIvzfq6ZGKJCZ1QH4LL'
+        client=pya3rt.TalkClient(apikey)
+        reply_message=client.talk(word)
+        return reply_message['results'][0]['reply']
 
   
 if __name__=='__main__':
