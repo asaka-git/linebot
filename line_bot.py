@@ -41,8 +41,9 @@ def talk_ai(word):
     if word=="ごりら":
         return 'I AM GORILLA'
     elif word[0]=='Q':
+        search_word=word[1:]
         url = 'https://www.google.co.jp/search'
-        response = requests.get(url, params={'q':word})
+        response = requests.get(url, params={'q':search_word})
         return response.url
     else:
         apikey='DZZgNzc1RdpkDzIvzfq6ZGKJCZ1QH4LL'
