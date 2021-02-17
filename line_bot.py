@@ -35,12 +35,18 @@ def handle_message(event):
   #返答する
   linebot_api.reply_message(event.reply_token,TextSendMessage(text=ai_message))
 
-#返事を返す関数
+#返事を返す、もしくは検索する
 def talk_ai(word):
-  apikey='DZZgNzc1RdpkDzIvzfq6ZGKJCZ1QH4LL'
-  client=pya3rt.TalkClient(apikey)
-  reply_message=client.talk(word)
-  return reply_message['results'][0]['reply']
+  if word[0]=='(' and word[len(word)-1]==')':
+    url='https://www.google.co.jp/search'
+    response = requests.get(url, params={'q': word})
+    return response.text
+  else:
+    apikey='DZZgNzc1RdpkDzIvzfq6ZGKJCZ1QH4LL'
+    client=pya3rt.TalkClient(apikey)
+    reply_message=client.talk(word)
+      return reply_message['results'][0]['reply']
+
   
 if __name__=='__main__':
   app.run()
