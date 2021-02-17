@@ -38,7 +38,7 @@ def handle_message(event):
 #返事を返す、もしくは検索する
 def talk_ai(word):
     if word=="ごりら":
-        return 'I AM GORIL'
+        return 'I AM GORILLA'
     else:
         apikey='DZZgNzc1RdpkDzIvzfq6ZGKJCZ1QH4LL'
         client=pya3rt.TalkClient(apikey)
