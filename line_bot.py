@@ -40,7 +40,7 @@ def talk_ai(word):
   if word=="ごりら":
     url='https://www.google.co.jp/search'
     response = requests.get(url, params={'q': word})
-    return 'HELLO'
+        return 'HELLO'
   else:
     apikey='DZZgNzc1RdpkDzIvzfq6ZGKJCZ1QH4LL'
     client=pya3rt.TalkClient(apikey)
